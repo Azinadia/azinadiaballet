@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+
+  <head>
+<title>Ballet's Life</title>
+<meta name="description" content="HTML tutorial">
+<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+<meta name="author" content="Azinádia Augusto">
+<meta http-equiv="refresh" content="30">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css\MyStyle.css">
+<meta name="viewport" content="width=device-width, initial- scale=1.0">
+  </head>
+
+<!---Content starts here -->
+  <body>
+    <header>
+      <a id="menu_icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z" fill="#f3e8ff"/>
+        </svg>
+      </a>
+      <h1>BALLET</h1>
+      <p> A vida é melhor quando se dança. </p>
+      <h4> Ballet is Life </h4>
+      <div id="drawer">
+        <nav>
+          <a href="#unordered"> Espetáculos</a>
+          <a href="#ordered"> Escolas de Dança</a>
+          <a href="#color"> Imagens</a>
+          <a href="#video"> Video de um Espetáculo</a>
+          <a href="#table"> Tabela de Informações</a>
+        </nav>
+      </div>
+    </header>
+
+  <nav id="tabletPC" class="col-3">
+    <a href="#unordered"> Espetáculos</a>
+    <a href="#ordered"> Escolas de Dança</a>
+    <a href="#color"> Imagens</a>
+    <a href="#video"> Video de um Espetáculo</a>
+    <a href="#table"> Tabela de Informações</a>
+  </nav>
+
+  <div id="container" class="col-9">
+    <section class="slideshow-container">
+      <h2>Slideshow</h2>
+
+      <article class="mySlides" class="fade">
+        <figure>
+          <img src="imagesballet/toes1.jpg">
+          <figcaption>Fig. 1: Graciousness</figcaption>
+        </figure>
+      </article>
+
+      <article class="mySlides" class="fade">
+        <figure>
+          <img src="imagesballet/toes.jpg">
+          <figcaption>Fig. 2: Ballet shoes</figcaption>
+        </figure>
+      </article>
+
+      <article class="mySlides" class="fade">
+        <figure>
+          <img src="imagesballet/toes2.jpg">
+          <figcaption>Fig. 3: Behind the dance</figcaption>
+        </figure>
+      </article>
+
+   <div class="dotpoints">
+       <span class="dot"></span>
+       <span class="dot"></span>
+       <span class="dot"></span>
+   </div>
+ </section>
+
+
+  <section>
+    <a name="unordered">
+      <h2> Lista de Espetáculos </h2>
+      <i>Estes são os espatáculos mais vistos e mais famosos mundialmente.</i><ul>
+        <li> The Nutcracker, </li>
+        <li> Swan Lake, </li>
+        <li> Don Quixote, </li>
+        <li> Giselle, </li>
+        <li> Romeo and Juliet. </li>
+      </ul>
+    </section>
+
+    <section>
+      <a name="ordered">
+        <h2> Escolas de Dança </h2>
+        <i> Duas das melhores escolas de dança no mundo. </i>
+        <ol>
+          <li><u> The Paris Opera Ballet School </u></li>
+          <li><u> Royal Ballet School </u></li>
+        </ol>
+      </section>
+
+      <section>
+        <a name="color">
+          <h2> Imagens </h2>
+          <p> Algumas imagens e video. </p>
+          <img src ="https://i.gifer.com/3Xj.gif"  width="800" height="300">
+          <img src = "imagesballet/image2.jpg" width="800" height="auto">
+          <img src = "imagesballet/image1.jpg" width="800" height="auto">
+        </section>
+
+      <section>
+        <a name="video">
+          <iframe width="800" height="515"
+          src="https://www.youtube.com/embed/zV1qLYukTH8"
+          frameborder="0" allow="accelerometer; autoplay; encrypted-media;
+          gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+       <section>
+         <a name="table">
+           <table border=“1px”>
+             <th colspan="3"> Ballet </th>
+             <tr>
+               <td> Institutions </td> <td> Choreographers </td> <td> Dancers </td>
+             </tr>
+             <tr>
+               <td rowspan="4"> Every one of these celebrated artists belonged to a larger entity: A Company </td>
+               <td rowspan="3"> Choreographers often have a more durable legacy than dancers </td>
+               <td> Anna Pavlova </td>
+             </tr>
+             <tr>
+               <td> Margot Fonteyn </td>
+             </tr>
+             <tr>
+               <td> Misty Copeland </td>
+             </tr>
+             <tr>
+               <td> Contemporary Ballet </td> <td> Rudolf Nureyev </td>
+             </tr>
+           </table>
+              </div>
+
+
+     <aside class="col-2">
+       <h3>Aside</h3>
+       <p> Esta zona serve para colocar informação menos relevante </p>
+     </aside>
+     <footer>
+       <h2>Developed by Azinádia Augusto</h2>
+     </footer>
+
+
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i = null;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+     slides[i].style.display = "none";
+     }
+     slideIndex++;
+     if (slideIndex> slides.length) {slideIndex = 1}
+     for (i = 0; i < dots.length; i++) {
+       dots[i].className = dots[i].className.replace(" active", "");
+     }
+     slides[slideIndex-1].style.display = "block";
+     dots[slideIndex-1].className += " active";
+     setTimeout(showSlides, 3000); // Change image every 3 seconds
+   }
+
+   let menu_icon = document.querySelector("#menu_icon");
+   let container = document.querySelector("#container");
+   let drawer = document.querySelector("#drawer");
+
+   menu_icon.addEventListener("click", function (e) {
+     drawer.classList.toggle("open");
+     e.stopPropagation(); });
+
+     container.addEventListener("click", function () {
+       drawer.classList.remove("open");
+});
+
+</script>
+
+
+
+  </body>
+
+</html>
